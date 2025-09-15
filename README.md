@@ -18,6 +18,7 @@ in scenarios where post-processing of candidate elements is expensive.
   2. Discard elements below a threshold (e.g., 50% of the bound or a learned quantile).
   3. Only apply expensive post-processing to the reduced candidate set.
 - This does **not** improve worst-case complexity, but can reduce the number of expensive operations in practical settings.
+👉 *We don’t beat Θ(n), but we save cost when post-processing is expensive.*
 
 ---
 
