@@ -31,7 +31,7 @@ in scenarios where post-processing of candidate elements is expensive.
 ## ⚙️ Example Code
 The repository includes a simple Python prototype:
 
-```bash
+```markdown
 python cost_aware_maximum_finding.py
 
 Example output:
