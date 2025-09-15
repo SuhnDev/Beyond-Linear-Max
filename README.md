@@ -52,11 +52,13 @@ Threshold scan: 0.007 sec
 
 We provide two complementary plots:
 
-1. **Without post-processing** — shows raw scan overheads. Cost-Aware adds a filter pass, so it’s expected to be slower or similar.
+1. **Without post-processing** — both Linear and Cost-Aware runs in **Ω(n)** time,
+but Cost-Aware includes an extra filtering step, so the constant factor is larger.
    
    ![no-post](./benchmark_no_post.png)
 
-2. **With heavy post-processing** — simulates expensive work (e.g., DB lookups / model inference) on candidates only. Here the Cost-Aware method benefits by calling the expensive step on far fewer items.
+3. **With heavy post-processing** — both methods still require **O(n)** to scan the input, but Cost-Aware applies the expensive step (e.g., DB lookups / model inference) only to a reduced subset **O(k)** (k ≪ n), instead of **O(n)** in the Linear case.  
+This makes Cost-Aware significantly faster in scenarios where post-processing dominates runtime.
    
    ![with-post](./benchmark_with_post.png)
 
