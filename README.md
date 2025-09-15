@@ -33,23 +33,35 @@ The repository includes a simple Python prototype:
 
 ```bash
 python cost_aware_maximum_finding.py
-Example output:
 
-text
-코드 복사
+Example output:
 Linear scan: 0.012 sec
 Threshold scan: 0.007 sec
+```
 (Times depend on data distribution and threshold choice.)
 
-🛠️ Tech
+---
+
+## 🛠️ Tech
+
 Python 3
 
 Basic random dataset simulation
 
 Matplotlib (optional, for plotting results)
 
-📌 Notes
+---
+
+## 📌 Notes
+
 This is a prototype and not an optimized production algorithm.
 
 The goal is to demonstrate that cost-aware strategies can
 sometimes outperform naive linear scans in practice.
+
+---
+
+## 📫 Contact
+
+Maintained by SuDev
+Feel free to open an issue or suggestion!
