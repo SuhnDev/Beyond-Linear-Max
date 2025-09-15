@@ -2,19 +2,25 @@ import random
 import time
 
 def linear_scan(arr):
-    return max(arr)
+    start = time.time()
+    maximum = max(arr)
+    end = time.time()
+    return maximum, end - start
 
-def threshold_scan(arr, threshold):
+def threshold_scan(arr, threshold_ratio=0.5):
+    start = time.time()
+    upper_bound = max(arr)
+    threshold = upper_bound * threshold_ratio
     candidates = [x for x in arr if x >= threshold]
-    return max(candidates) if candidates else None
+    maximum = max(candidates)
+    end = time.time()
+    return maximum, end - start
 
 if __name__ == "__main__":
-    data = [random.randint(1, 1000) for _ in range(100000)]
-    t0 = time.time()
-    linear_scan(data)
-    t1 = time.time()
-    threshold_scan(data, 500)
-    t2 = time.time()
-    print("Linear scan:", t1 - t0, "sec")
-    print("Threshold scan:", t2 - t1, "sec")
+    data = [random.randint(1, 10**6) for _ in range(10**6)]
     
+    max1, t1 = linear_scan(data)
+    max2, t2 = threshold_scan(data)
+    
+    print(f"Linear scan: {t1:.6f} sec")
+    print(f"Threshold scan: {t2:.6f} sec")
