@@ -37,7 +37,7 @@ python cost_aware_maximum_finding.py
 Example output:
 Linear scan: 0.012 sec
 Threshold scan: 0.007 sec
-
+```bash
 
 *(Times depend on data distribution and threshold choice.)*
 
