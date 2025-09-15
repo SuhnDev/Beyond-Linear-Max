@@ -67,7 +67,6 @@ pip install -r requirements.txt
 python benchmark.py
 ```
 
-
 ---
 
 ## 🛠️ Tech
@@ -85,3 +84,11 @@ python benchmark.py
 ## 📫 Contact
 Maintained by **SuDev**
 feel free to open an issue or suggestion!
+
+---
+
+## 🇰🇷
+이 프로젝트는 **후처리 비용이 큰 환경**에서 
+임계값 기반 필터링을 활용해 
+후보 개수를 줄여 실행 시간을 절감할 수 있는 
+실험적 알고리즘 접근을 다룹니다.
