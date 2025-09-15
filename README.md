@@ -45,17 +45,25 @@ Threshold scan: 0.007 sec
 
 ---
 
-## 📈 Benchmark Results
-We compared **Linear Max** and **Cost-Aware Maximum Finding** for different input sizes.
-The example below uses a threshold of `0.8 × max` to demonstrate reduced expensive calls on high values.
+## 📈 Performance Comparison
 
-![benchmark](./benchmark.png)
+We provide two complementary plots:
+
+1. **Without post-processing** — shows raw scan overheads. Cost-Aware adds a filter pass, so it’s expected to be slower or similar.
+   
+   ![no-post](./benchmark_no_post.png)
+
+2. **With heavy post-processing** — simulates expensive work (e.g., DB lookups / model inference) on candidates only. Here the Cost-Aware method benefits by calling the expensive step on far fewer items.
+   
+   ![with-post](./benchmark_with_post.png)
 
 To reproduce:
+
 ```bash
 pip install -r requirements.txt
 python benchmark.py
 ```
+
 
 ---
 
