@@ -63,5 +63,5 @@ sometimes outperform naive linear scans in practice.
 
 ## 📫 Contact
 
-Maintained by SuDev
+Maintained by SuDev.
 Feel free to open an issue or suggestion!
