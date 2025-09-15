@@ -12,11 +12,9 @@ in scenarios where post-processing of candidate elements is expensive.
 - Standard maximum finding requires scanning all elements → Θ(n).
 - Our approach introduces a **threshold filter**:
   1. Estimate an upper bound for the maximum.
-  2. Discard elements below a threshold (e.g., 50% of the bound).
-  3. Only compare the reduced candidate set.
-
-- This does **not** improve worst-case complexity,  
-  but can reduce the number of expensive operations in practical settings.
+  2. Discard elements below a threshold (e.g., 50% of the bound or a learned quantile).
+  3. Only apply expensive post-processing to the reduced candidate set.
+- This does **not** improve worst-case complexity, but can reduce the number of expensive operations in practical settings.
 
 ---
 
@@ -33,8 +31,12 @@ Run the provided Python file:
 
 ```bash
 python cost_aware_maximum_finding.py
+```
 
-Example output:
+➡️ Full code is available here: [cost_aware_maximum_finding.py](./cost_aware_maximum_finding.py)
+
+**Example output:**
+```text
 Linear scan: 0.012 sec
 Threshold scan: 0.007 sec
 ```
@@ -43,24 +45,31 @@ Threshold scan: 0.007 sec
 
 ---
 
+## 📈 Benchmark Results
+We compared **Linear Max** and **Cost-Aware Maximum Finding** for different input sizes.
+The example below uses a threshold of `0.8 × max` to demonstrate reduced expensive calls on high values.
+
+![benchmark](./benchmark.png)
+
+To reproduce:
+```bash
+pip install -r requirements.txt
+python benchmark.py
+```
+
+---
+
 ## 🛠️ Tech
 - Python 3
-- Basic random dataset simulation
-- Matplotlib (optional, for plotting results)
+- Matplotlib (for plotting)
 
 ---
 
 ## 📌 Notes
 - This is a **prototype** and not an optimized production algorithm.
-- The goal is to demonstrate that **cost-aware strategies** can  
-  sometimes outperform naive linear scans in practice.
-
----
-
-➡️ Full code is available here: [cost_aware_maximum_finding.py](cost_aware_maximum_finding.py)
+- The goal is to demonstrate that **cost-aware strategies** can sometimes outperform naive linear scans in practice when post-processing dominates.
 
 ---
 
 ## 📫 Contact
-Maintained by **SuDev**  
-Feel free to open an issue or suggestion!
+Maintained by **SuDev** — feel free to open an issue or suggestion!
