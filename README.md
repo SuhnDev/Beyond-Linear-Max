@@ -1,6 +1,9 @@
 # Beyond Linear Max
 ### Cost-Aware Maximum Finding
 
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+![Made with Python](https://img.shields.io/badge/Python-3.x-blue)
+
 This repository explores a threshold-based approach to maximum finding.  
 While the theoretical lower bound for maximum search remains **Θ(n)**,  
 we investigate whether **cost-aware filtering** can reduce *practical runtime*  
