@@ -72,4 +72,5 @@ python benchmark.py
 ---
 
 ## 📫 Contact
-Maintained by **SuDev** — feel free to open an issue or suggestion!
+Maintained by **SuDev**
+feel free to open an issue or suggestion!
