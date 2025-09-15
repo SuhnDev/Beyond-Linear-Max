@@ -40,6 +40,8 @@ Threshold scan: 0.007 sec
 ```
 (Times depend on data distribution and threshold choice.)
 
+➡️ Full code is available here: [cost_aware_maximum_finding.py](./cost_aware_maximum_finding.py)
+
 ---
 
 ## 🛠️ Tech
