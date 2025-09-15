@@ -29,7 +29,7 @@ in scenarios where post-processing of candidate elements is expensive.
 ---
 
 ## ⚙️ Example Code
-The repository includes a simple Python prototype:
+Run the provided Python file:
 
 ```bash
 python cost_aware_maximum_finding.py
