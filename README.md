@@ -95,7 +95,7 @@ but Cost-Aware includes an extra filtering step, so the constant factor is large
    
    ![no-post](./benchmark_no_post.png)
 
-3. **With heavy post-processing** — both methods still require **O(n)** to scan the input, but Cost-Aware applies the expensive step (e.g., DB lookups / model inference) only to a reduced subset **O(k)** (k ≪ n), instead of **O(n)** in the Linear case. This makes Cost-Aware significantly faster in scenarios where post-processing dominates runtime.
+2. **With heavy post-processing** — both methods still require **O(n)** to scan the input, but Cost-Aware applies the expensive step (e.g., DB lookups / model inference) only to a reduced subset **O(k)** (k ≪ n), instead of **O(n)** in the Linear case. This makes Cost-Aware significantly faster in scenarios where post-processing dominates runtime.
    
    ![with-post](./benchmark_with_post.png)
 
