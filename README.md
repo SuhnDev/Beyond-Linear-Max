@@ -79,24 +79,6 @@ Uncomment one scenario in the cell below to test different behaviors:
 - → Reduces overhead for large n
 - → But if the sample underestimates the max, the candidate set grows and speedup decreases
 
-### Examples
-
-```bash
-# Baseline vs cost-aware (no post-processing)
-python cost_aware_maximum_finding.py --compare
-
-# With heavy post-processing, only candidates are expensive
-python cost_aware_maximum_finding.py --post-iters 1500 --compare
-
-# Use a known upper bound (fastest)
-python cost_aware_maximum_finding.py --known-upper 1000000 --post-iters 1500 --compare
-
-# Estimate upper bound from a sample
-python cost_aware_maximum_finding.py --sample-size 1000 --post-iters 1500 --compare
-
-# Plot runtime scaling with n
-python cost_aware_maximum_finding.py --post-iters 1500 --sample-size 1000 --compare --plot
-```
 ---
 
 ## 📈 Performance Comparison
