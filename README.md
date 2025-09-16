@@ -38,6 +38,7 @@ python cost_aware_maximum_finding.py
 ```
 
 ➡️ Full code is available here: [cost_aware_maximum_finding.py](./cost_aware_maximum_finding.py)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/SuhnDev/Beyond-Linear-Max)
 
 **Example output:**
 ```text
