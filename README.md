@@ -80,6 +80,11 @@ python benchmark.py
 ## 📌 Notes
 - This is a **prototype** and not an optimized production algorithm.
 - The goal is to demonstrate that **cost-aware strategies** can sometimes outperform naive linear scans in practice when post-processing dominates.
+  
+- Although this repository demonstrates maximum finding, the same cost-aware filtering idea applies to minimum finding as well.
+Simply invert the logic (use a lower threshold instead of an upper bound).
+
+In both cases, the theoretical bound remains Θ(n), but practical savings arise when post-processing is costly.
 
 ---
 
