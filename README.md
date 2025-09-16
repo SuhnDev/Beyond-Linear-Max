@@ -55,6 +55,38 @@ You can try the code directly in Google Colab:
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SuhnDev/Beyond-Linear-Max/blob/main/notebooks/demo.ipynb)
 
+- **Heavy Post-Processing Simulation**  
+  Use `--post-iters <k>` to simulate expensive work (e.g., DB lookups, model inference).  
+  Cost-Aware will apply this step **only to filtered candidates**, while the baseline applies it to all.
+
+- **Sample-Based Upper Bound Estimation**  
+  Use `--sample-size <m>` to estimate an upper bound from a random sample.  
+  This avoids a full initial pass but may underestimate.
+
+- **Known Upper Bound**  
+  If you already know the dataset's max possible value, pass `--known-upper` to skip the first scan.
+
+### Examples
+
+```bash
+# Baseline vs cost-aware (no post-processing)
+python cost_aware_maximum_finding.py --compare
+
+# With heavy post-processing, only candidates are expensive
+python cost_aware_maximum_finding.py --post-iters 1500 --compare
+
+# Use a known upper bound (fastest)
+python cost_aware_maximum_finding.py --known-upper 1000000 --post-iters 1500 --compare
+
+# Estimate upper bound from a sample
+python cost_aware_maximum_finding.py --sample-size 1000 --post-iters 1500 --compare
+
+# Plot runtime scaling with n
+python cost_aware_maximum_finding.py --post-iters 1500 --sample-size 1000 --compare --plot
+
+---
+
+
 ---
 
 ## 📈 Performance Comparison
