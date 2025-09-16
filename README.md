@@ -83,10 +83,7 @@ python cost_aware_maximum_finding.py --sample-size 1000 --post-iters 1500 --comp
 
 # Plot runtime scaling with n
 python cost_aware_maximum_finding.py --post-iters 1500 --sample-size 1000 --compare --plot
-
----
-
-
+```
 ---
 
 ## 📈 Performance Comparison
