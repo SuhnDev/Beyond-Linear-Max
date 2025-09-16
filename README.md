@@ -51,20 +51,33 @@ Threshold scan: 0.007 sec
 ---
 
 ## 🚀 Run in Colab
-You can try the code directly in Google Colab:
+You can try the code directly in Google Colab.
+Uncomment one scenario in the cell below to test different behaviors:
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SuhnDev/Beyond-Linear-Max/blob/main/notebooks/demo.ipynb)
 
-- **Heavy Post-Processing Simulation**  
-  Use `--post-iters <k>` to simulate expensive work (e.g., DB lookups, model inference).  
-  Cost-Aware will apply this step **only to filtered candidates**, while the baseline applies it to all.
+### args = "--compare"
+- Baseline comparison (no post-processing)
+- Linear vs Cost-Aware on plain max search
+- → Cost-Aware may be slightly slower due to filtering overhead
 
-- **Sample-Based Upper Bound Estimation**  
-  Use `--sample-size <m>` to estimate an upper bound from a random sample.  
-  This avoids a full initial pass but may underestimate.
+### args = "--compare --post-iters 1500 --threshold 0.8 --seed 42"
+- Heavy post-processing comparison
+- Linear: applies expensive work to every element
+- Cost-Aware: applies expensive work only to candidates (~top 20%)
+- → Cost-Aware becomes much faster when post-processing dominates
 
-- **Known Upper Bound**  
-  If you already know the dataset's max possible value, pass `--known-upper` to skip the first scan.
+### args = "--compare --known-upper 1000000 --post-iters 1500 --threshold 0.8 --seed 42"
+- Known upper bound scenario
+- The true maximum possible value is already known
+- → Skip the initial scan and directly compute cutoff
+- → Further improves Cost-Aware efficiency, especially for large n
+
+### args = "--compare --sample-size 1000 --post-iters 1500 --threshold 0.8 --seed 42"
+- Sample-based upper bound estimation
+- Estimate cutoff from a small random sample (1000 elements)
+- → Reduces overhead for large n
+- → But if the sample underestimates the max, the candidate set grows and speedup decreases
 
 ### Examples
 
