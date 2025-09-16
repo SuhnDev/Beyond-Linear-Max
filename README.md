@@ -39,7 +39,6 @@ python cost_aware_maximum_finding.py
 
 ➡️ Full code is available here: [cost_aware_maximum_finding.py](./cost_aware_maximum_finding.py)
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/SuhnDev/Beyond-Linear-Max)
 
 **Example output:**
 ```text
@@ -48,6 +47,13 @@ Threshold scan: 0.007 sec
 ```
 
 *(Times depend on data distribution and threshold choice.)*
+
+---
+
+## 🚀 Run in Colab
+You can try the code directly in Google Colab:
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SuhnDev/Beyond-Linear-Max/blob/main/notebooks/demo.ipynb)
 
 ---
 
